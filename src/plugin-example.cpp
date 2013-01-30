@@ -32,6 +32,8 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 #include <algorithm>
 
+#include <skivvy/logrep.h>
+
 namespace skivvy { namespace example {
 
 // You MUST have this macro and it MUST name your plugin class

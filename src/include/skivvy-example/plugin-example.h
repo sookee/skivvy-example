@@ -33,7 +33,7 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 #include <skivvy/ircbot.h>
 
-namespace myspace { namespace example {
+namespace skivvy { namespace example {
 
 using namespace skivvy::ircbot;
 
