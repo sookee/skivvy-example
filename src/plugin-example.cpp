@@ -38,13 +38,14 @@ namespace skivvy { namespace example {
 
 // You MUST have this macro and it MUST name your plugin class
 IRC_BOT_PLUGIN(ExampleIrcBotPlugin);
+PLUGIN_INFO("example", "Example Irc Bot Plugin", "0.0");
 
 ExampleIrcBotPlugin::ExampleIrcBotPlugin(IrcBot& bot)
-: ExampleIrcBotPlugin(bot)
+: BasicIrcBotPlugin(bot)
 {
 }
 
-ExampleIrcBotPlugin::~ExampleIrcBotPlugin() {}
+ExampleIrcBotPlugin::~ExampleIrcBotPlugin() { }
 
 void ExampleIrcBotPlugin::do_stuff(const message& msg)
 {
@@ -82,8 +83,9 @@ bool ExampleIrcBotPlugin::initialize()
 
 // INTERFACE: IrcBotPlugin
 
-std::string ExampleIrcBotPlugin::get_name() const { return "My Example Plugin"; }
-std::string ExampleIrcBotPlugin::get_version() const { return "v0.1"; }
+std::string ExampleIrcBotPlugin::get_id() const { return ID; }
+std::string ExampleIrcBotPlugin::get_name() const { return NAME; }
+std::string ExampleIrcBotPlugin::get_version() const { return VERSION; }
 
 void ExampleIrcBotPlugin::exit()
 {
