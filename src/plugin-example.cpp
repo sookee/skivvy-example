@@ -28,11 +28,11 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 '-----------------------------------------------------------------*/
 
-#include <skivvy/plugin-example.h>
+#include <skivvy-example/plugin-example.h>
 
 #include <algorithm>
 
-namespace myspace { namespace example {
+namespace skivvy { namespace example {
 
 // You MUST have this macro and it MUST name your plugin class
 IRC_BOT_PLUGIN(ExampleIrcBotPlugin);
@@ -101,4 +101,4 @@ void ExampleIrcBotPlugin::event(const message& msg)
 	}
 }
 
-}} // myspace::example
+}} // skivvy::example

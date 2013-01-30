@@ -21,7 +21,7 @@
 # 
 # '-----------------------------------------------------------------*/
 
-plugin_includedir = $(prefix)/include/skivvy-chanops
+plugin_includedir = $(prefix)/include/skivvy-example
 plugin_librarydir = $(datadir)/skivvy/plugins
 plugin_manualsdir = $(datadir)/skivvy
 
@@ -44,15 +44,15 @@ BOTLIBS = -lskivvy -ldl
 BOTFLAGS = -Wl,-E
 
 plugin_include_HEADERS = \
-	$(srcdir)/include/skivvy-chanops/plugin-chanops.h
+	$(srcdir)/include/skivvy-example/plugin-example.h
 	
 plugin_library_LTLIBRARIES =  \
-	skivvy-plugin-chanops.la
+	skivvy-plugin-example.la
 
 # IrcBot plugins
-skivvy_plugin_chanops_la_SOURCES = plugin-chanops.cpp
-skivvy_plugin_chanops_la_LDFLAGS = -module
+skivvy_plugin_example_la_SOURCES = plugin-example.cpp
+skivvy_plugin_example_la_LDFLAGS = -module
 
-plugin_manuals_DATA = $(top_srcdir)/docs/chanops-manual.text
+plugin_manuals_DATA = $(top_srcdir)/docs/example-manual.text
 
-extra_DIST = $(top_srcdir)/docs/chanops-manual.text
+extra_DIST = $(top_srcdir)/docs/example-manual.text

@@ -21,8 +21,8 @@
 # 
 # '-----------------------------------------------------------------*/
 
-AC_INIT([skivvy-chanops],[0.1],[oaskivvy@gmail.com],[skivvy-chanops])
-AC_CONFIG_SRCDIR([src/plugin-chanops.cpp])
+AC_INIT([skivvy-example],[0.1],[oaskivvy@gmail.com],[skivvy-example])
+AC_CONFIG_SRCDIR([src/plugin-example.cpp])
 AC_CONFIG_HEADERS([config.h])
 
 AM_INIT_AUTOMAKE([1.10 foreign])
