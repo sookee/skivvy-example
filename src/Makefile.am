@@ -21,10 +21,9 @@
 # 
 # '-----------------------------------------------------------------*/
 
-plugin_includedir = $(prefix)/include/skivvy-example
-# $(pkglibdir)
+plugin_includedir = $(includedir)/skivvy
 plugin_librarydir = $(libdir)/skivvy
-plugin_manualsdir = $(datadir)/skivvy
+plugin_manualsdir = $(mandir)/skivvy
 
 DEF_FLAGS = \
 	-D _GLIBCXX_USE_NANOSLEEP \
@@ -44,8 +43,10 @@ BOTLIBS = -lskivvy -ldl
 # -Wl,-E is required for programs that load plugin's
 BOTFLAGS = -Wl,-E
 
+#plugin_include_HEADERS = \
+#	$(srcdir)/include/skivvy-example/plugin-example.h
 plugin_include_HEADERS = \
-	$(srcdir)/include/skivvy-example/plugin-example.h
+	$(srcdir)/include/skivvy/plugin-example.h
 	
 plugin_library_LTLIBRARIES =  \
 	skivvy-plugin-example.la
@@ -60,6 +61,10 @@ extra_DIST = $(top_srcdir)/docs/example-manual.text
 
 install-data-hook: $(plugin_library_LTLIBRARIES)
 	for m in $(plugin_library_LTLIBRARIES); do \
+		echo ==============================; \
+		echo pkgincludedir $(pkgincludedir); \
+		echo pkglibdir     $(pkglibdir); \
+		echo ==============================; \
 		base=`echo $$m | sed 's/\..*//'`; \
 		rm -f $(plugin_librarydir)/$$base.la; \
 	done

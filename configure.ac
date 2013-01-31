@@ -21,7 +21,7 @@
 # 
 # '-----------------------------------------------------------------*/
 
-AC_INIT([skivvy-example],[0.1],[oaskivvy@gmail.com],[skivvy-example])
+AC_INIT([skivvy-example], [0.1], [oaskivvy@gmail.com], [skivvy-example], [https://github.com/sookee/skivvy-example])
 AC_CONFIG_SRCDIR([src/plugin-example.cpp])
 AC_CONFIG_HEADERS([config.h])
 

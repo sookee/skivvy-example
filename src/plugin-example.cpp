@@ -28,7 +28,8 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 '-----------------------------------------------------------------*/
 
-#include <skivvy-example/plugin-example.h>
+//#include <skivvy-example/plugin-example.h>
+#include <skivvy/plugin-example.h>
 
 #include <algorithm>
 
