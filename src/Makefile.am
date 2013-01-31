@@ -56,3 +56,15 @@ skivvy_plugin_example_la_LDFLAGS = -module
 plugin_manuals_DATA = $(top_srcdir)/docs/example-manual.text
 
 extra_DIST = $(top_srcdir)/docs/example-manual.text
+
+install-data-hook: $(plugin_library_LTLIBRARIES)
+	@echo "Removing unused libraries..."; \
+	for m in $(plugin_library_LTLIBRARIES); do \
+		base=`echo $$m | sed 's/\..*//'`; \
+		echo libexecdir $(libexecdir); \
+		echo pkgdatadir $(pkgdatadir); \
+		rm -f $(plugin_librarydir)/$$base.*a; \
+		rm -f $(plugin_librarydir)/$$base.so; \
+		rm -f $(plugin_librarydir)/$$base.so.0; \
+		mv -f $(plugin_librarydir)/$$base.so.0.0.0 $(plugin_librarydir)/$$base.so; \
+	done
