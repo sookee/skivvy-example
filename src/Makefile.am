@@ -22,7 +22,8 @@
 # '-----------------------------------------------------------------*/
 
 plugin_includedir = $(prefix)/include/skivvy-example
-plugin_librarydir = $(datadir)/skivvy/plugins
+# $(pkglibdir)
+plugin_librarydir = $(libdir)/skivvy
 plugin_manualsdir = $(datadir)/skivvy
 
 DEF_FLAGS = \
@@ -51,18 +52,14 @@ plugin_library_LTLIBRARIES =  \
 
 # IrcBot plugins
 skivvy_plugin_example_la_SOURCES = plugin-example.cpp
-skivvy_plugin_example_la_LDFLAGS = -module
+skivvy_plugin_example_la_LDFLAGS = -module -avoid-version
 
 plugin_manuals_DATA = $(top_srcdir)/docs/example-manual.text
 
 extra_DIST = $(top_srcdir)/docs/example-manual.text
 
 install-data-hook: $(plugin_library_LTLIBRARIES)
-	@echo "Removing unused libraries..."; \
 	for m in $(plugin_library_LTLIBRARIES); do \
 		base=`echo $$m | sed 's/\..*//'`; \
-		rm -f $(plugin_librarydir)/$$base.*a; \
-		rm -f $(plugin_librarydir)/$$base.so; \
-		rm -f $(plugin_librarydir)/$$base.so.0; \
-		mv -f $(plugin_librarydir)/$$base.so.0.0.0 $(plugin_librarydir)/$$base.so; \
+		rm -f $(plugin_librarydir)/$$base.la; \
 	done
