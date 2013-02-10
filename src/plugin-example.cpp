@@ -50,8 +50,8 @@ ExampleIrcBotPlugin::~ExampleIrcBotPlugin() { }
 
 void ExampleIrcBotPlugin::do_stuff(const message& msg)
 {
-	std::string cmd = msg.get_user_cmd_cp(); // this is !do_stuff
-	std::string params = msg.get_user_params_cp(); // this is any text after the command
+	std::string cmd = msg.get_user_cmd(); // this is !do_stuff
+	std::string params = msg.get_user_params(); // this is any text after the command
 
 	bot.fc_reply_pm(msg, "I sent you a PM!");
 	bot.fc_reply(msg, "I did stuff!");
@@ -98,9 +98,9 @@ void ExampleIrcBotPlugin::exit()
 void ExampleIrcBotPlugin::event(const message& msg)
 {
 	// Copy what people say backwards into the channel
-	if(msg.cmd_cp == "PRIVMSG")
+	if(msg.command == "PRIVMSG")
 	{
-		std::string text = msg.text_cp;
+		std::string text = msg.get_trailing();
 		std::reverse(text.begin(), text.end());
 		bot.fc_reply(msg, text);
 	}
