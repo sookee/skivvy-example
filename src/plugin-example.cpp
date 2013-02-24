@@ -28,7 +28,6 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 '-----------------------------------------------------------------*/
 
-//#include <skivvy-example/plugin-example.h>
 #include <skivvy/plugin-example.h>
 
 #include <algorithm>
@@ -39,7 +38,7 @@ namespace skivvy { namespace example {
 
 // You MUST have this macro and it MUST name your plugin class
 IRC_BOT_PLUGIN(ExampleIrcBotPlugin);
-PLUGIN_INFO("example", "Example Irc Bot Plugin", "0.0");
+PLUGIN_INFO("example", "Example Irc Bot Plugin", "1.0-beta");
 
 ExampleIrcBotPlugin::ExampleIrcBotPlugin(IrcBot& bot)
 : BasicIrcBotPlugin(bot)
