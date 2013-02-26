@@ -32,7 +32,7 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 #include <algorithm>
 
-#include <skivvy/logrep.h>
+#include <skivvy/utils.h>
 
 namespace skivvy { namespace example {
 
